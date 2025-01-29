@@ -16,7 +16,7 @@ const Aside = () => {
     const { content, setContent } = useAppContext();
 
     return (
-        <div className="w-full h-full bg-gray-600 p-4">
+        <div className="w-full h-full bg-gray-600 p-4 overflow-y-scroll">
             <div className="w-[80%] md:w-[60%] h-[150px] mx-auto rounded-lg shadow-[0px_0px_86px_7px_rgba(235,147,47,0.8)]"><img src="/images/mine.png" alt="" className="w-full h-full rounded-lg" /></div>
 
             <div className="w-full text-white flex flex-col items-center mt-4">
