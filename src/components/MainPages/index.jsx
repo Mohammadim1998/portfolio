@@ -1,17 +1,17 @@
 "use client";
 import { useEffect, useState } from "react";
+import Close from "@/icons/close";
+import Hamburger from "@/icons/hamburger";
+import Home from "../pages/Home";
 import Aside from "../aside";
-import Home from "../pages/home";
 import AboutMe from "../pages/aboutMe";
-import ContactMe from "../pages/contactMe";
 import Resume from "../pages/resume";
 import Course from "../pages/course";
-import Hamburger from "@/icons/hamburger";
-import Close from "@/icons/close";
+import ContactMe from "../pages/contactMe";
+import { useAppContext } from "../../../context/context";
 
 const MainPages = () => {
-    const [openSidebar, setOpenSidebar] = useState(false);
-    const [content, setContent] = useState("home");
+    const { content, openSidebar, setOpenSidebar } = useAppContext();
     const [details, setDetails] = useState();
 
     useEffect(() => {
@@ -30,16 +30,18 @@ const MainPages = () => {
 
     return (
         <div className="relative w-full h-full flex gap-x-1">
-            <div className={`w-[30%] h-full hidden md:block`}>
-                <Aside setContent={setContent} content={content} />
+
+            <div onClick={(e) => e.stopPropagation()} className={`shrink-0 z-50 relative h-full ${openSidebar ? "max-md:w-[70%] w-[30%]" : "max-md:w-0 w-[30%] overflow-hidden"} `}>
+                <Aside />
+                <div onClick={() => setOpenSidebar(false)} className="absolute max-md:block hidden top-2 -left-10 w-10 h-10 bg-white text-purple-700 rounded-full"><Close /></div>
             </div>
 
-            <div onClick={() => setOpenSidebar(false)} className={`z-50 w-full h-full block md:hidden bg-[rgba(0,0,0,0.4)] absolute ${openSidebar ? "right-0" : "right-[-100%]"} top-0 bottom-0 transition-all duration-100`}>
-                <div onClick={(e) => e.stopPropagation()} className="w-[70%] h-full absolute">
-                    <Aside setContent={setContent} content={content} />
-                    <div onClick={() => setOpenSidebar(false)} className="absolute top-2 -left-10 w-10 h-10 bg-white text-purple-700 rounded-full"><Close /></div>
-                </div>
+            <div onClick={() => setOpenSidebar(false)} className={`z-40 w-full max-md:block hidden h-full max-md:bg-[rgba(0,0,0,0.4)] absolute ${openSidebar ? "right-0" : "right-[-100%]"} top-0 bottom-0 transition-all duration-100`}>
             </div>
+
+            {/* <div className={`w-[30%] h-full hidden md:flex`}>
+                <Aside />
+            </div> */}
 
             <div onClick={() => setOpenSidebar(true)} className="absolute top-4 right-4 w-10 h-10 bg-orange-600 rounded-full p-2 block md:hidden"><Hamburger /></div>
 

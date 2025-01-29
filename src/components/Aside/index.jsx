@@ -1,3 +1,4 @@
+"use client";
 import HomeIcon from "@/icons/home";
 import Btn from "./btn";
 import Boy from "@/icons/boy";
@@ -9,8 +10,11 @@ import Copy from "@/icons/cpoy";
 import Instagram from "@/icons/instagram";
 import Telegram from "@/icons/telegram";
 import Whatsapp from "@/icons/Whtasapp";
+import { useAppContext } from "../../../context/context";
 
-const Aside = ({ setContent, content }) => {
+const Aside = () => {
+    const { content, setContent } = useAppContext();
+
     return (
         <div className="w-full h-full bg-gray-600 p-4">
             <div className="w-[80%] md:w-[60%] h-[150px] mx-auto rounded-lg shadow-[0px_0px_86px_7px_rgba(235,147,47,0.8)]"><img src="/images/mine.png" alt="" className="w-full h-full rounded-lg" /></div>
