@@ -13,7 +13,7 @@ import Whatsapp from "@/icons/Whtasapp";
 const Aside = ({ setContent, content }) => {
     return (
         <div className="w-full h-full bg-gray-600 p-4">
-            <div className="w-full h-[150px] bg-purple-600 rounded-lg"><img src="/images/mine.png" alt="" className="w-full h-full rounded-lg" /></div>
+            <div className="w-[80%] md:w-[60%] h-[150px] mx-auto rounded-lg shadow-[0px_0px_86px_7px_rgba(235,147,47,0.8)]"><img src="/images/mine.png" alt="" className="w-full h-full rounded-lg" /></div>
 
             <div className="w-full text-white flex flex-col items-center mt-4">
                 <h1>(( محمد پورحسین ))</h1>
@@ -35,7 +35,7 @@ const Aside = ({ setContent, content }) => {
                 <Btn setContent={setContent} icon={<Contact />} contentType={"contactMe"} content={content} title={"تماس با من"} />
             </div>
 
-            <div className="w-full flex flex-col gap-y-4 items-center">
+            <div className="w-full flex flex-col gap-y-4 items-center mt-20">
                 <div className="flex justify-center items-center gap-x-2">
                     <span className="text-white">طراحی شده با</span>
                     <div className="w-6 h-6 text-red-600"><Heart /></div>
