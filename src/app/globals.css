@@ -1,21 +1,51 @@
 @tailwind base;
+
 @tailwind components;
+
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Regular.eot") format("eot"),
+  url("/fonts/Roboto-Regular.ttf") format("ttf"),
+  url("/fonts/Roboto-Regular.woff") format("woff"),
+  url("/fonts/Roboto-Regular.woff2") format("woff2"),;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "Tanha";
+  src: url("/fonts/Tanha.eot") format("eot"),
+  url("/fonts/Tanha.ttf") format("ttf"),
+  url("/fonts/Tanha.woff") format("woff"),
+  url("/fonts/Tanha.woff2") format("woff2"),;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: "Vazir";
+  src: url("/fonts/Vazir.eot") format("eot"),
+  url("/fonts/Vazir.ttf") format("ttf"),
+  url("/fonts/Vazir.woff") format("woff"),
+  url("/fonts/Vazir.woff2") format("woff2"),;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body {
+  width: 100vw;
+  height: 100vh;
+  background-color: whitesmoke;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  direction: rtl !important;
+  margin: 0;
+  padding: 0;
+  font-family: "Tanha";
+}
+
+a {
+  text-decoration: none;
 }
