@@ -1,4 +1,3 @@
-import Instagram from "@/icons/instagram";
 
 const Home = () => {
     return (
